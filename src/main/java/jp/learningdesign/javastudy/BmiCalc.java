@@ -1,6 +1,8 @@
 package jp.learningdesign.javastudy;
 
 import java.io.IOException;
+import java.io.PrintWriter; // テキストの出力を扱うクラス
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +29,12 @@ public class BmiCalc extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		out.println("<html><body>");
+		out.println("<h1>こんにちは、サーブレットの世界へようこそ！</h1>");
+		out.println("</body><html>");
 	}
 
 	/**
